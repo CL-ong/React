@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Animate something here</title>
+        <style>
+
+            @keyframes translate {
+                0% {
+                    left:0%
+                }
+                50% {
+                    left:90%;
+                }
+                100% {
+                    left:30%;
+                }
+            }
+
+            h1 {
+                position: relative;
+                animation-name: translate;
+                animation-duration: 2s;
+                animation-fill-mode: backwards;
+            }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const h1 = document.querySelector('h1');
+                h1.style.animationPlayState = 'paused';
+
+                document.querySelector('button').onclick = () => {
+                    if (h1.style.animationPlayState = 'paused') {
+                        h1.style.animationPlayState = 'running';
+                    } else {
+                        h1.style.animationPlayState = 'paused';
+                    }
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <button>Click me!</button>
+        <h1>Welcome to the bog!</h1>
+    </body>
+</html>
